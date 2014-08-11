@@ -35,8 +35,8 @@ public class Command_doom extends TFM_Command
             return true;
         }
 
-        TFM_Util.adminAction(sender.getName(), "Casting oblivion over " + player.getName(), true);
-        TFM_Util.bcastMsg(player.getName() + " will be completely obliviated!", ChatColor.RED);
+        TFM_Util.adminAction(player.getName(), "is a naughty, naughty boy ", true);
+        TFM_Util.bcastMsg(player.getName() + " has been banned by" + sender.getName(), ChatColor.GREEN);
 
         final String ip = player.getAddress().getAddress().getHostAddress().trim();
 
@@ -103,7 +103,7 @@ public class Command_doom extends TFM_Command
                 player.getWorld().createExplosion(player.getLocation(), 4F);
 
                 // kick player
-                player.kickPlayer(ChatColor.RED + "FUCKOFF, and get your shit together!");
+                player.kickPlayer(ChatColor.RED + "Your username and our IP are temporality banned, You have been banned by ", sender.getName());
             }
         }.runTaskLater(plugin, 3L * 20L);
 
