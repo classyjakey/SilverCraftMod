@@ -883,6 +883,7 @@ public class TFM_PlayerListener implements Listener
         {
             player.setPlayerListName(ChatColor.BLUE + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&9Owner&8]");
+            player.kickPlayer(ChatColor.RED + "Your too cool to play on this server.");
         }
         else if (player.getName().equals("PieGuy7896"))
         {
