@@ -25,7 +25,7 @@ public class Command_scm extends TFM_Command
 {
         {
 
-        playerMsg("SilverCrafTMod For SilverCraft, An Associated serverr.", ChatColor.GOLD);
+        playerMsg("SilverCrafTMod For SilverCraft, An Associated server.", ChatColor.GOLD);
         playerMsg(String.format("Version "
                 + ChatColor.BLUE + "%s.%s" + ChatColor.GOLD + ", built "
                 + ChatColor.BLUE + "%s" + ChatColor.GOLD + " by "
