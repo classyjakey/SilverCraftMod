@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Deop a player.", usage = "/<command> <playername>")
+@CommandParameters(description = "Desuper a player.", usage = "/<command> <playername>")
 public class Command_deop extends TFM_Command
 {
     @Override
@@ -34,9 +34,9 @@ public class Command_deop extends TFM_Command
             player = me.StevenLawson.TotalFreedomMod.TFM_DepreciationAggregator.getOfflinePlayer(server, args[0]);
         }
 
-        TFM_Util.adminAction(sender.getName(), "De-opping " + player.getName(), false);
+        TFM_Util.adminAction(sender.getName(), "De-supering " + player.getName(), false);
 
-        player.setOp(false);
+        TFM_AdminList.removeSuperadmin(player);
 
         return true;
     }
