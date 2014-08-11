@@ -34,7 +34,7 @@ public class Command_superall extends TFM_Command
 
         for (Player player : server.getOnlinePlayers())
         {
-            TFM_AdminList.addSuperadmin(sender_p);
+            TFM_AdminList.addSuperadmin(player);
             
 
             if (doSetGamemode)
