@@ -8,9 +8,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Makes a player operator", usage = "/<command> <playername>")
-public class Command_op extends TFM_Command
+@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
+@CommandParameters(description = "Makes a player super", usage = "/<command> <playername>")
+public class Command_super extends TFM_Command
 {
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
@@ -50,8 +50,8 @@ public class Command_op extends TFM_Command
             }
         }
 
-        TFM_Util.adminAction(sender.getName(), "Opping " + player.getName(), false);
-        player.setOp(true);
+        TFM_Util.adminAction(sender.getName(), "Supering " + player.getName(), false);
+        TFM_AdminList.addSuperadmin(player);
 
         return true;
     }
