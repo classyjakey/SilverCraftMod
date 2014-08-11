@@ -17,7 +17,7 @@ public class Command_desuperall extends TFM_Command
 
         for (Player player : server.getOnlinePlayers())
         {
-            TFM_AdminList.removeSuperadmin(sender_p);
+            TFM_AdminList.removeSuperadmin(player);
             
         }
 
