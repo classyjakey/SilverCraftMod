@@ -879,15 +879,17 @@ public class TFM_PlayerListener implements Listener
             player.setPlayerListName(ChatColor.AQUA + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&BSuper Admin&8]");
         }
-        else if (player.getName().equals("aggelosQQ"))
+        if (player.getName().equals("aggelosQQ"))
         {
             player.setPlayerListName(ChatColor.BLUE + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&9Owner&8]");
-            player.kickPlayer(ChatColor.RED + "Your too cool to play on this server.");
         }
-        else if (player.getName().equals("PieGuy7896"))
+        if (player.getName().equalsIgnoreCase("PieGuy7896"))
         {
-            player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
+            player.setPlayerListName(ChatColor.LIGHT_PURPLE + "Pie");
+            player.setDisplayName("Pie");
+            event.setJoinMessage(ChatColor.YELLOW + "Pie has joined the game.");
+            event.setJoinMessage(ChatColor.AQUA + "Pie is a " + ChatColor.DARK_PURPLE + "Developer ");
             TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
         }
         
