@@ -13,7 +13,6 @@ public enum TFM_PlayerRank
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
-    TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
     OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
@@ -81,14 +80,14 @@ public enum TFM_PlayerRank
             {
                 return OWNER;
             }
-
+            else if (TFM_ConfigEntry.DEVELOPERS.getList().contains(sender.getName()))
+            {
+                return DEVELOPER;
+            }
+            
             if (entry.isSeniorAdmin())
             {
                 rank = SENIOR;
-            }
-            else if (entry.isTelnetAdmin())
-            {
-                rank = TELNET;
             }
             else
             {
