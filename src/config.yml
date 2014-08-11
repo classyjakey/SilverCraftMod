@@ -18,7 +18,12 @@ server:
   # All players who show up as owner
   owners:
     - markbyron
-
+  
+  # All players who show up as owner
+  developers:
+    - PieGuy7896
+    - Typhlosion147
+  
   # URL players should appeal for bans at
   ban_url: http://totalfreedom.boards.net/
 
