@@ -882,6 +882,7 @@ public class TFM_PlayerListener implements Listener
         if (player.getName().equals("aggelosQQ"))
         {
             player.setPlayerListName(ChatColor.BLUE + player.getName());
+            event.setJoinMessage(ChatColor.BLUE + "aggelosQQ - The Owner of this server has joined!");
             TFM_PlayerData.getPlayerData(player).setTag("&8[&9Owner&8]");
         }
         if (player.getName().equalsIgnoreCase("PieGuy7896"))
