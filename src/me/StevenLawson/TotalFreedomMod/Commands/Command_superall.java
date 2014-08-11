@@ -7,7 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
+@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "Super everyone on the server, optionally change everyone's gamemode at the same time.", usage = "/<command> [-c | -s]")
 public class Command_superall extends TFM_Command
 {
