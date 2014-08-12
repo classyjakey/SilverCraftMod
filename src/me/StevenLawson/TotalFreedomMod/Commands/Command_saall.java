@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
-@CommandParameters(description = "SA everyone on the server, optionally change everyone's gamemode at the same time.", usage = "/<command> [-c | -s]")
+@CommandParameters(description = "SA everyone on the server, optionally change everyone's gamemode at the same time.", usage = "/<command> [-c | -s]", aliases = "superall")
 public class Command_opall extends TFM_Command
 {
     @Override
