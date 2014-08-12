@@ -34,8 +34,8 @@ public class Command_deop extends TFM_Command
             player = me.StevenLawson.TotalFreedomMod.TFM_DepreciationAggregator.getOfflinePlayer(server, args[0]);
         }
 
-        TFM_Util.adminAction(sender.getName(), "De-supering " + player.getName(), false);
-
+TFM_Util.adminAction(sender.getName(), "removing " + player.getName() + " from the SuperAdmin list!", false);
+ 
         TFM_AdminList.removeSuperadmin(player);
 
         return true;
