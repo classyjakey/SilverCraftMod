@@ -1,7 +1,6 @@
 package me.StevenLawson.TotalFreedomMod.Listener;
 
-import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
-import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -10,8 +9,9 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.*;
-import me.StevenLawson.TotaFreedomMod.Bridge.TFM_EssentialsBridge;
+import me.StevenLawson.TotalFreedomMod.Bridge.TFM_EssentialsBridge;
 import me.StevenLawson.TotalFreedomMod.Commands.Command_landmine;
+import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager.RollbackEntry;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
@@ -357,12 +357,6 @@ public class TFM_PlayerListener implements Listener
         return min + (RANDOM.nextDouble() * ((max - min) + 1.0));
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void onPlayerTeleport(PlayerTeleportEvent event)
-    {
-        TFM_AdminWorld.getInstance().validateMovement(event);
-    }
-
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPlayerMove(PlayerMoveEvent event)
     {
@@ -378,11 +372,6 @@ public class TFM_PlayerListener implements Listener
         }
         catch (IllegalArgumentException ex)
         {
-        }
-
-        if (!TFM_AdminWorld.getInstance().validateMovement(event))
-        {
-            return;
         }
 
         Player player = event.getPlayer();
@@ -599,11 +588,7 @@ public class TFM_PlayerListener implements Listener
                 message = message.substring(0, 100);
                 TFM_Util.playerMsg(player, "Message was shortened because it was too long to send.");
             }
-            if (message.toLowerCase().contains("@"))
-            {
-               player.chat(ChatColor.DARK_RED + ChatColor.BOLD + "@" + StringUtils.join(args, " "));
-               event.setCancelled(true);
-            }
+
             // Check for caps
             if (message.length() >= 6)
             {
