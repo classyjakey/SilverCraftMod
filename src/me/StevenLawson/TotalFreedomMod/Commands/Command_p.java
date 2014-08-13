@@ -1,7 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import me.StevenLawson.TotalFreedomMod.TFM_AdminList
+import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import org.bukkit.command.Command;
 import org.bukkit.command.ChatColor;
 import org.bukkit.command.CommandSender;
