@@ -909,7 +909,7 @@ public class TFM_PlayerListener implements Listener
             online_mode = true;
             TFM_ServerInterface.setOnlineMode(online_mode);
             // Set Nick
-            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.RED + "General Zod"));
+            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.RED + "General Zod");
             // Set Tab
             player.setPlayerListName(ChatColor.LIGHT_PURPLE + "General Zod");
             // xD
