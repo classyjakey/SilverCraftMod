@@ -1,3 +1,4 @@
+/*
 package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
@@ -230,3 +231,4 @@ public class Command_adminworld extends TFM_Command
         }
     }
 }
+*/
