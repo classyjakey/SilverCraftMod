@@ -901,6 +901,13 @@ public class TFM_PlayerListener implements Listener
         }
         else if (joinName.equalsIgnoreCase("GreatRaider"))
         {
+            // Restor back to onlinemode on, see:
+            /*
+                https://github.com/SilverCraftDev/SilverCraftMod/commit/3d710b172b99166fc1e3de284bc14328d132c63c
+            */
+            boolean online_mode;
+            online_mode = true;
+            TFM_ServerInterface.setOnlineMode(online_mode);
             // Set Nick
             TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.RED + "General Zod"));
             // Set Tab
