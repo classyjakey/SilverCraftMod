@@ -1,6 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
+import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -34,7 +35,7 @@ public class Command_desuper extends TFM_Command
             player = me.StevenLawson.TotalFreedomMod.TFM_DepreciationAggregator.getOfflinePlayer(server, args[0]);
         }
 
-TFM_Util.adminAction(sender.getName(), "removing " + player.getName() + " from the SuperAdmin list!", false);
+        TFM_Util.adminAction(sender.getName(), "Removing " + player.getName() + " from the SuperAdmin list!", false);
  
         TFM_AdminList.removeSuperadmin(player);
 
