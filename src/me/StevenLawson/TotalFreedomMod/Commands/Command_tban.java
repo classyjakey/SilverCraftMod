@@ -1,6 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_Ban;
+import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_BanManager;
 import me.StevenLawson.TotalFreedomMod.TFM_ServerInterface;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
@@ -44,10 +45,10 @@ public class Command_tban extends TFM_Command
         }
 
         TFM_Util.adminAction(sender.getName(), "Tempbanning: " + player.getName() + " for 5 minutes.", true);
-        TFM_BanManager.addUuidBan(
-                new TFM_Ban(TFM_Util.getUuid(player), player.getName(), sender.getName(), TFM_Util.parseDateOffset("5m"), ChatColor.RED + "You have been temporarily banned for 5 minutes."));
+        TFM_AdminList.removeSuperadmin(player);
+        TFM_BanManager.addUuidBan(new TFM_Ban(TFM_Util.getUuid(player), player.getName(), sender.getName(), TFM_Util.parseDateOffset("5m"), ChatColor.RED + "You have been temporarily banned for 5 minutes."));
 
-        player.kickPlayer(ChatColor.RED + "You have been temporarily banned for five minutes by ", player.getName());
+        player.kickPlayer(ChatColor.RED + "You have been temporarily banned for five minutes by " + sender.getName());
 
         return true;
     }
