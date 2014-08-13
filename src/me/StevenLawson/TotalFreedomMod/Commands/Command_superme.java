@@ -14,8 +14,8 @@ public class Command_superme extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        TFM_Util.adminAction(sender.getName(), "Opping " + sender.getName(), false);
-        TFM_AdminList.addSuperadmin(player);
+        TFM_Util.adminAction(sender.getName(), "Supering " + sender.getName(), false);
+        TFM_AdminList.addSuperadmin(sender_p);
         sender.sendMessage(You are now supered!);
 
         return true;
