@@ -376,6 +376,15 @@ public class TFM_PlayerData
     {
         this.isMuted = muted;
     }
+    public boolean isBusy()
+    {
+        return isBusy;
+    }
+
+    public void setBusy(boolean muted)
+    {
+        this.isBusy = busy;
+    }
 
     public boolean isHalted()
     {
