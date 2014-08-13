@@ -7,9 +7,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.ONLY_CONSOLE, blockHostConsole = true)
-@CommandParameters(description = "Close server to non-superadmins.", usage = "/<command> [on | off]")
-public class Command_adminmode extends TFM_Command
+@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH, blockHostConsole = true)
+@CommandParameters(description = "Close server to superadmins.", usage = "/<command> [on | off]")
+public class Command_seniormode extends TFM_Command
 {
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
@@ -21,19 +21,19 @@ public class Command_adminmode extends TFM_Command
 
         if (args[0].equalsIgnoreCase("off"))
         {
-            TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(false);
+            TFM_ConfigEntry.SENIOR_ONLY_MODE.setBoolean(false);
             TFM_Util.adminAction(sender.getName(), "Opening the server to all players.", true);
             return true;
         }
         else if (args[0].equalsIgnoreCase("on"))
         {
-            TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(true);
+            TFM_ConfigEntry.SENIOR_ONLY_MODE.setBoolean(true);
             TFM_Util.adminAction(sender.getName(), "Closing the server to non-superadmins.", true);
             for (Player player : server.getOnlinePlayers())
             {
-                if (!TFM_AdminList.isSuperAdmin(player))
+                if (!TFM_AdminList.isSeniorAdmin(player))
                 {
-                    player.kickPlayer("Server is now closed to non-superadmins.");
+                    player.kickPlayer("Server is now closed to superadmins.");
                 }
             }
             return true;
