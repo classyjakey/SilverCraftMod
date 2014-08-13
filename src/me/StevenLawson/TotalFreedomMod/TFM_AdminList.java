@@ -15,7 +15,6 @@ import me.StevenLawson.TotalFreedomMod.Commands.Command_logs;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_Config;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_MainConfig;
-import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import net.minecraft.util.com.google.common.collect.Sets;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -235,7 +234,6 @@ public class TFM_AdminList
             }
         }
 
-        TFM_AdminWorld.getInstance().wipeAccessCache();
     }
 
     private static void parseOldConfig(TFM_Config config)
