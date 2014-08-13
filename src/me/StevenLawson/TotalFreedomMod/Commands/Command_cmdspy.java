@@ -14,7 +14,7 @@ public class Command_cmdspy extends TFM_Command
     {
 
         
-        playerMsg("Please use /commandspy"));
+        playerMsg("Please use /commandspy");
 
         return true;
     }
