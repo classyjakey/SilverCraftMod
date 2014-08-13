@@ -1,4 +1,4 @@
-package me.StevenLawson.TotalFreedomMod.World;
+/*package me.StevenLawson.TotalFreedomMod.World;
 
 import me.StevenLawson.TotalFreedomMod.World.TFM_CustomWorld;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
@@ -351,3 +351,4 @@ public final class TFM_AdminWorld extends TFM_CustomWorld
         private static final TFM_AdminWorld INSTANCE = new TFM_AdminWorld();
     }
 }
+*/
