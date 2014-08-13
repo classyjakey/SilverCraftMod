@@ -2,7 +2,6 @@ package me.StevenLawson.TotalFreedomMod;
 
 import me.StevenLawson.TotalFreedomMod.Commands.TFM_CommandHandler;
 import me.StevenLawson.TotalFreedomMod.World.TFM_Flatlands;
-import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import java.io.File;
 import java.io.FileFilter;
@@ -119,11 +118,6 @@ public class TotalFreedomMod extends JavaPlugin
         }
         catch (Exception ex)
         {
-        }
-
-        try
-        {
-            TFM_AdminWorld.getInstance().getWorld();
         }
         catch (Exception ex)
         {
