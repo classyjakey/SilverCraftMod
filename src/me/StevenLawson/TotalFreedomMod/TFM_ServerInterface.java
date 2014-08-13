@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
+import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import net.minecraft.server.v1_7_R3.MinecraftServer;
 import net.minecraft.server.v1_7_R3.PropertyManager;
@@ -175,8 +176,14 @@ public class TFM_ServerInterface
             }
 
             // Admin-only mode
-            if (TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean())
+            if (TFM_ConfigEntry.SENIOR_ONLY_MODE.getBoolean())
             {
+                if (TFM_AdminList.isSeniorAdmin(player) || TFM_Util.DEVELOPERS.contains(sender.getName()));
+                {
+                // ^ Above what it'll do if the user is a senior admin
+                // v Below is what it will do if user is not a senior admin
+                }
+                
                 event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "Server is temporarily open to admins only.");
                 return;
             }
