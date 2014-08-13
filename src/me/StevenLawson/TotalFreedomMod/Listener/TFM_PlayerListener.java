@@ -859,6 +859,7 @@ public class TFM_PlayerListener implements Listener
     public static void onPlayerJoinEvent(PlayerJoinEvent event)
     {
         Player player = event.getPlayer();
+        final String joinName = event.getPlayer().getName();
         if (TFM_Util.DEVELOPERS.contains(player.getName()))
         {
             player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
@@ -885,13 +886,25 @@ public class TFM_PlayerListener implements Listener
             event.setJoinMessage(ChatColor.BLUE + "aggelosQQ - The Owner of this server has joined!");
             TFM_PlayerData.getPlayerData(player).setTag("&8[&9Owner&8]");
         }
-        if (player.getName().equalsIgnoreCase("PieGuy7896"))
+        else if (player.getName().equalsIgnoreCase("PieGuy7896"))
         {
             player.setPlayerListName(ChatColor.LIGHT_PURPLE + "Pie");
             player.setDisplayName("Pie");
             event.setJoinMessage(ChatColor.YELLOW + "Pie has joined the game.");
             event.setJoinMessage(ChatColor.AQUA + "Pie is a " + ChatColor.DARK_PURPLE + "Developer ");
             TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
+        }
+        else if (joinName.equalsIgnoreCase("GreatRaider"))
+        {
+            // Set Nick
+            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.RED + "General Zod"));
+            // Set Tab
+            player.setPlayerListName(ChatColor.LIGHT_PURPLE + "General Zod");
+            // xD
+            TFM_Util.bcastMsg(ChatColor.AQUA + "General Zod is " + ChatColor.RED + " from krypton");
+            //
+            event.setJoinMessage(ChatColor.YELLOW + "General Zod joined the game.");
+            
         }
         
     }
