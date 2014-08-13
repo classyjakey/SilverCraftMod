@@ -599,7 +599,7 @@ public class TFM_PlayerListener implements Listener
                 message = message.substring(0, 100);
                 TFM_Util.playerMsg(player, "Message was shortened because it was too long to send.");
             }
-            if (message.toLowerCase().contains("@")
+            if (message.toLowerCase().contains("@"))
             {
                player.chat(ChatColor.DARK_RED + ChatColor.BOLD + "@" + StringUtils.join(args, " "));
                event.setCancelled(true);
