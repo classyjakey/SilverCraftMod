@@ -76,6 +76,7 @@ public enum TFM_ConfigEntry
     AUTO_ENTITY_WIPE(Boolean.class, "auto_wipe"),
     CONSOLE_IS_SENIOR(Boolean.class, "console_is_senior");
     //
+    SENIOR_ONLY_MODE(Boolean.class, "senior_only_mode");
     private final Class<?> type;
     private final String configName;
 
