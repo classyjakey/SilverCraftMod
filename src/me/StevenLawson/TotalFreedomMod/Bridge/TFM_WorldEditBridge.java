@@ -1,6 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Bridge;
 
 import com.sk89q.worldedit.LocalSession;
+import com.sk89q.worldedit.LocalWorld;
 import com.sk89q.worldedit.bukkit.BukkitPlayer;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.regions.Region;
@@ -10,6 +11,7 @@ import me.StevenLawson.TotalFreedomMod.TFM_ProtectedArea;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -135,8 +137,8 @@ public class TFM_WorldEditBridge
                 return;
             }
 
-            final World selectionWorld = session.getSelectionWorld();
-            final Region selection = session.getSelection(selectionWorld);
+            final World selectionWorld = (World) session.getSelectionWorld();
+            final Region selection = session.getSelection((LocalWorld) selectionWorld);
 
             if (TFM_ProtectedArea.isInProtectedArea(
                     getBukkitVector(selection.getMinimumPoint()),
@@ -149,7 +151,7 @@ public class TFM_WorldEditBridge
                     public void run()
                     {
                         player.sendMessage(ChatColor.RED + "The region that you selected contained a protected area. Selection cleared.");
-                        session.getRegionSelector(selectionWorld).clear();
+                        session.getRegionSelector((LocalWorld) selectionWorld).clear();
                     }
                 }.runTask(TotalFreedomMod.plugin);
             }
