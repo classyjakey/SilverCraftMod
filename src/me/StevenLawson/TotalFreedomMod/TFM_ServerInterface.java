@@ -185,7 +185,7 @@ public class TFM_ServerInterface
             // Admin-only mode
             if (TFM_ConfigEntry.SENIOR_ONLY_MODE.getBoolean())
             {
-                if (TFM_AdminList.isSeniorAdmin(player) || TFM_Util.DEVELOPERS.contains(sender.getName()));
+                if (TFM_AdminList.isSeniorAdmin(player) || TFM_Util.DEVELOPERS.contains(player.getName()));
                 {
                 // ^ Above what it'll do if the user is a senior admin
                 // v Below is what it will do if user is not a senior admin
