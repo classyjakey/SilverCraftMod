@@ -67,7 +67,7 @@ public class Command_cage extends TFM_Command
 
         if (args.length >= 2)
         {
-            else if ("off".equals(args[1]))
+            if ("off".equals(args[1]))
             {
                 TFM_Util.adminAction(sender.getName(), "Uncaging " + player.getName(), true);
 
@@ -130,5 +130,6 @@ public class Command_cage extends TFM_Command
         Material outerMaterial = Material.GLASS;
         Material innerMaterial = Material.AIR;
         }
+        return true;
     }
 }
