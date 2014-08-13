@@ -27,6 +27,7 @@ public class TFM_PlayerData
     private final UUID uuid;
     private boolean isFrozen = false;
     private boolean isMuted = false;
+    private boolean isBusy = false;
     private boolean isHalted = false;
     private int messageCount = 0;
     private int totalBlockDestroy = 0;
@@ -381,7 +382,7 @@ public class TFM_PlayerData
         return isBusy;
     }
 
-    public void setBusy(boolean muted)
+    public void setBusy(boolean busy)
     {
         this.isBusy = busy;
     }
