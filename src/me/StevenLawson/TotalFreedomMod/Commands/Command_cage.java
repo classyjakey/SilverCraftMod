@@ -3,6 +3,7 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
+import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -17,6 +18,10 @@ public class Command_cage extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
+        if (TFM_AdminList.isSeniorAdmin(player))
+        {
+            
+        
         if (args.length == 0)
         {
             return false;
@@ -63,7 +68,21 @@ public class Command_cage extends TFM_Command
 
         if (args.length >= 2)
         {
-            if ("off".equals(args[1]))
+            // v Usage, /cage <user> <greatraider>
+            if (args[2].equalsIgnoreCase("greatraider"))
+            {
+                if (Math.abs(xOffset) == length && Math.abs(yOffset) == length && Math.abs(zOffset) == length)
+                {
+                block.setType(Material.GLOWSTONE);
+                continue;
+                }
+                block.setType(Material.SKULL);
+                final Skull skull = (Skull) block.getState();
+                skull.setSkullType(SkullType.PLAYER);
+                skull.setOwner("GreatRaider");
+                skull.update();
+            }
+            else if ("off".equals(args[1]))
             {
                 TFM_Util.adminAction(sender.getName(), "Uncaging " + player.getName(), true);
 
@@ -118,5 +137,13 @@ public class Command_cage extends TFM_Command
         }
 
         return true;
+        }
+        else
+        {
+        TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(sender_p);
+
+        Material outerMaterial = Material.GLASS;
+        Material innerMaterial = Material.AIR;
+        }
     }
 }
