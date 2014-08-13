@@ -184,7 +184,7 @@ public class TFM_ServerInterface
                 // v Below is what it will do if user is not a senior admin
                 }
                 
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "Server is temporarily open to admins only.");
+                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "Server is temporarily open to seniors admins only.");
                 return;
             }
 
