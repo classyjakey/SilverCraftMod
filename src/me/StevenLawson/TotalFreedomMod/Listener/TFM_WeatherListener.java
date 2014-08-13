@@ -1,6 +1,5 @@
 package me.StevenLawson.TotalFreedomMod.Listener;
 
-import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -15,10 +14,7 @@ public class TFM_WeatherListener implements Listener
     {
         try
         {
-            if (event.getWorld() == TFM_AdminWorld.getInstance().getWorld() && TFM_AdminWorld.getInstance().getWeatherMode() != TFM_AdminWorld.WeatherMode.OFF)
-            {
-                return;
-            }
+            
         }
         catch (Exception ex)
         {
@@ -36,10 +32,7 @@ public class TFM_WeatherListener implements Listener
     {
         try
         {
-            if (event.getWorld() == TFM_AdminWorld.getInstance().getWorld() && TFM_AdminWorld.getInstance().getWeatherMode() != TFM_AdminWorld.WeatherMode.OFF)
-            {
-                return;
-            }
+            
         }
         catch (Exception ex)
         {
