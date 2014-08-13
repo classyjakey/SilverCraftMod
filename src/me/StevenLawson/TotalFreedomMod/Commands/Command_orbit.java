@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
+@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "POW!!! Right in the kisser! One of these days Alice, straight to the Moon!",
         usage = "/<command> <target> [<<power> | stop>]")
 public class Command_orbit extends TFM_Command
