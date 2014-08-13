@@ -16,7 +16,7 @@ public class Command_superme extends TFM_Command
     {
         TFM_Util.adminAction(sender.getName(), "Supering " + sender.getName(), false);
         TFM_AdminList.addSuperadmin(sender_p);
-        sender.sendMessage(You are now supered!);
+        sender.sendMessage("You are now supered!");
 
         return true;
     }
