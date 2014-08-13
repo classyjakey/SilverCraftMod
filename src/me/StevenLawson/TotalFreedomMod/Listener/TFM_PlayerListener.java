@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.*;
+import me.StevenLawson.TotaFreedomMod.Bridge.TFM_EssentialsBridge;
 import me.StevenLawson.TotalFreedomMod.Commands.Command_landmine;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager.RollbackEntry;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
@@ -600,7 +601,7 @@ public class TFM_PlayerListener implements Listener
             }
             if (message.toLowerCase().contains("@")
             {
-               player.chat(ChatColor.DARK_RED + ChatColor.BOLD + "@" + StringUtils.join(args, " "))
+               player.chat(ChatColor.DARK_RED + ChatColor.BOLD + "@" + StringUtils.join(args, " "));
                event.setCancelled(true);
             }
             // Check for caps
