@@ -103,7 +103,7 @@ public class Command_doom extends TFM_Command
                 player.getWorld().createExplosion(player.getLocation(), 4F);
 
                 // kick player
-                player.kickPlayer(ChatColor.RED + "Your username and our IP are temporality banned, You have been banned by ", sender.getName());
+                player.kickPlayer(ChatColor.RED + "Your username and our IP are temporality banned, You have been banned by " + sender.getName());
             }
         }.runTaskLater(plugin, 3L * 20L);
 
