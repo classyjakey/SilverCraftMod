@@ -6,7 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level=AdminLevel.SUPER, source=SourceType.BOTH)
+@CommandPermissions(level=AdminLevel.SENIOR, source=SourceType.BOTH)
 @CommandParameters(description="Clears the Chat", usage="/<command>", aliases="cc")
 public class Command_clearchat
   extends TFM_Command
