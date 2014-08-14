@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
+@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "Toggles TotalFreedomMod settings", usage = "/<command> [option] [value] [value]")
 public class Command_toggle extends TFM_Command
 {
