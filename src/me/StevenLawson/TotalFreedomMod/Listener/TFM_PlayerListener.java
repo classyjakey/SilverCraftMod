@@ -13,6 +13,7 @@ import me.StevenLawson.TotalFreedomMod.Bridge.TFM_EssentialsBridge;
 import me.StevenLawson.TotalFreedomMod.Commands.Command_landmine;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager.RollbackEntry;
+import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.server;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -906,9 +907,6 @@ public class TFM_PlayerListener implements Listener
             /*
                 https://github.com/SilverCraftDev/SilverCraftMod/commit/3d710b172b99166fc1e3de284bc14328d132c63c
             */
-            boolean online_mode;
-            online_mode = true;
-            TFM_ServerInterface.setOnlineMode(online_mode);
             // Set Nick
             TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.RED + "General Zod");
             // Set Tab
@@ -918,12 +916,6 @@ public class TFM_PlayerListener implements Listener
             //
             event.setJoinMessage(ChatColor.YELLOW + "General Zod joined the game.");
             
-        }
-        if (player.getName().equals("vj13573"))
-        {
-            player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
-            event.setJoinMessage(ChatColor.DARK_PURPLE + "The Co-Owner vj13573 has joined.");
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&9Co-Owner&8]");
         }
         
     }
