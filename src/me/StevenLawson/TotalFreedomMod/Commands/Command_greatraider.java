@@ -1,5 +1,5 @@
 /* package me.StevenLawson.TotalFreedomMod.Commands;
-
+//What a copy of doom
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Ban;
 import me.StevenLawson.TotalFreedomMod.TFM_BanManager;
@@ -16,7 +16,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
-@CommandParameters(description = "For the stupid bishs", usage = "/<command> <playername>")
+@CommandParameters(description = "For the stupid bitches", usage = "/<command> <playername>")
 public class Command_greatraider extends TFM_Command
 {
     @Override
@@ -192,7 +192,7 @@ public class Command_greatraider extends TFM_Command
                 player.getWorld().createExplosion(player.getLocation(), 4F);
 
                 // kick player
-                player.kickPlayer(ChatColor.RED + "Gtfo bith -" + sender.getName());
+                player.kickPlayer(ChatColor.RED + "GTFO bitch -" + sender.getName());
             }
         }.runTaskLater(plugin, 3L * 30L);
 
