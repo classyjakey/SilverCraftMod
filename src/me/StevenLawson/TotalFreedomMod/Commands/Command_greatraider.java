@@ -1,4 +1,4 @@
-package me.StevenLawson.TotalFreedomMod.Commands;
+/* package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Ban;
@@ -199,3 +199,4 @@ public class Command_greatraider extends TFM_Command
         return true;
     }
 }
+*/
