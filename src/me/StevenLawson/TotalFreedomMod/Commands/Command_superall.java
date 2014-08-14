@@ -9,23 +9,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
-@CommandParameters(description = "Senior Admin Chat", usage = "/<command> <message>")
-public class Command_p extends TFM_Command
+@CommandParameters(description = "Super All players on thy server", usage = "/<command>")
+public class Command_superall extends TFM_Command
 {
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        if (args.length == 0)
-        {
-          return false;
-        }
-        // Chat
+        TFM_Util.adminAction(sender.getName(), "Supering all players on the server.", false);
         for (final Player player : server.getOnlinePlayers())
         {
-            if (TFM_AdminList.isSeniorAdmin(player))
-            {
-                player.sendMessage(ChatColor.YELLOW + "[SENIOR-ADMIN] " + ChatColor.DARK_RED + sender.getName() + ChatColor.AQUA + ">" + ChatColor.AQUA + StringUtils.join(args, " ")); 
-            }
+            TFM_AdminList.addSuperadmin(player);
         }
         return true;
     }
