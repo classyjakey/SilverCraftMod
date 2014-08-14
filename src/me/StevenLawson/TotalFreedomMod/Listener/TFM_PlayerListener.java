@@ -919,6 +919,12 @@ public class TFM_PlayerListener implements Listener
             event.setJoinMessage(ChatColor.YELLOW + "General Zod joined the game.");
             
         }
+        if (player.getName().equals("vj13573"))
+        {
+            player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
+            event.setJoinMessage(ChatColor.DARK_PURPLE + "The Co-Owner vj13573 has joined.");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&9Co-Owner&8]");
+        }
         
     }
 }
