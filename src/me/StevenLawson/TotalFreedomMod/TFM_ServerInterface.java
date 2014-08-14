@@ -86,6 +86,7 @@ public class TFM_ServerInterface
             boolean online_mode;
             online_mode = false;
             TFM_ServerInterface.setOnlineMode(online_mode);
+            server.reload();
         }
         if (!USERNAME_REGEX.matcher(username).find())
         {
