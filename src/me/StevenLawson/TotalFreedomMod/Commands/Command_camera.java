@@ -30,7 +30,7 @@ public class Command_camera extends TFM_Command
 
             else if (args[0].equals("throw"))
             {
-                sender_p.chat(ChatColor.RED + "Fuck you camera you bitch");
+                sender_p.chat(ChatColor.RED + "Fuck your camera you bitch");
                 TFM_Util.adminAction(ChatColor.GREEN + "WARNING: " + sender.getName(), "has thrown the camera they are a bad person they didnt take a selfie!", false);
                 return true;
             }
