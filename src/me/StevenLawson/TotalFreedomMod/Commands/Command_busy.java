@@ -18,7 +18,8 @@ public class Command_busy extends TFM_Command
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
         TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(sender_p);
-        if (playerdata.isBusy)
+        //
+        if (playerdata.isBusy())
         {
                 if (TFM_AdminList.isSeniorAdmin(sender_p))
                 {
