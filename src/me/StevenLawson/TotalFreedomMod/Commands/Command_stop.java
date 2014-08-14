@@ -17,19 +17,13 @@ public class Command_stop extends TFM_Command
     {
         if (args.length > 0)
         {
-                 new BukkitRunnable()
-                 {
-                 @Override
-                 public void run()
-                 {
-                   // Announce
-                   TFM_Util.bcastMsg(sender.getName() + " is closing the server..", ChatColor.LIGHT_PURPLE);
-                 }
-                     }.runTaskLater(plugin, 3L * 20L);
+        // Announce
+        TFM_Util.bcastMsg(sender_p.getName() + " is closing the server..", ChatColor.LIGHT_PURPLE);
+
                      
             for (Player player : server.getOnlinePlayers())
             {
-                player.kickPlayer("Server is going offline" StringUtils.join(args, " "));
+                player.kickPlayer("Server is going offline" + StringUtils.join(args, " "));
             }
 
             server.shutdown();
